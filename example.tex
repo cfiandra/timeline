@@ -1,0 +1,31 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{timeline}
+
+\begin{document}
+
+\begin{tikzpicture}[timespan=Day]
+% now we have days as reference
+% default timespan is Week
+
+\timeline{8} % number of weeks/<timespan>
+
+% put here the phases
+\begin{phases}
+\initialphase{involvement degree=1.75cm,phase color=black}
+\phase{between week=1 and 2 in 0.1,involvement degree=2.25cm}
+\phase{between week=1 and 2 in 0.5,involvement degree=3cm}
+\phase{between week=1 and 2 in 0.9,involvement degree=2.125cm}
+\phase{between week=3 and 4 in 0.7,phase color=blue!80!cyan}
+\end{phases}
+
+% put here the milestones
+\addmilestone{at=phase-0.90,direction=90:1cm,text={Initial meeting},text options={above}}
+\addmilestone{at=phase-0.270,direction=270:1cm,text={Initial meeting},text options={below}}
+
+\addmilestone{at=phase-2.110,direction=120:1.5cm,text={Research},text options={above}}
+\addmilestone{at=phase-2.250,direction=240:1.5cm,text={Need Agreement},text options={below}}
+\end{tikzpicture}
+
+\end{document}
