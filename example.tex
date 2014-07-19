@@ -5,11 +5,14 @@
 
 \begin{document}
 
-\begin{tikzpicture}[timespan=Day]
-% now we have days as reference
-% default timespan is Week
+\begin{tikzpicture}[timespan={}]
+% timespan={Day} -> now we have days as reference
+% timespan={}    -> no label is displayed for the timespan
+% default timespan is 'Week'
 
-\timeline{8} % number of weeks/<timespan>
+\timeline[custom interval=true]{January, March, May, July, September, November}
+% \timeline[custom interval=true]{3,...,9} -> i.e., from Day 3 to Day 9
+% \timeline{8} -> i.e., from Week 1 to Week 8
 
 % put here the phases
 \begin{phases}
