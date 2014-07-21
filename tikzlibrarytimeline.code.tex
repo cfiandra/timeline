@@ -1,9 +1,10 @@
 % * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 % COPYRIGHT 2014 - Claudio Fiandrino
+% Released under the LaTeX Project Public License v1.3c or later
 % 
 % email: <claudio dot fiandrino at gmail dot com>
 %
-% Timeline TikZ library version 0.3 - 19/07/2014
+% Timeline TikZ library version 0.3a - 19/07/2014
 
 \usetikzlibrary{backgrounds,calc}
 
@@ -94,11 +95,11 @@
  
   \ifcustominterval%
     \foreach \x[count=\xi] in {#2}{%
-      \node[text=white]at +(\xi*\position,0.5\timelineheight) (\timespan-\xi) {\timespan\ \x};%
+      \node[text=white,text depth=0pt]at +(\xi*\position,0.5\timelineheight) (\timespan-\xi) {\timespan\ \x};%
     }%
   \else%
     \foreach \x[count=\xi] in {1,...,#2}{%
-      \node[text=white]at +(\xi*\position,0.5\timelineheight) (\timespan-\xi) {\timespan\ \x};%
+      \node[text=white, text depth=0pt]at +(\xi*\position,0.5\timelineheight) (\timespan-\xi) {\timespan\ \x};%
     }%
   \fi%  
 }
@@ -134,3 +135,4 @@
 % 0.3 -> \timeline command with custom intervals
 %             styles ``between x''
 %             removed unnecessary call to xstring
+% 0.3a -> text depth for timeline labels
